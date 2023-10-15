@@ -12,8 +12,8 @@ public class Semana09 {
         byte[] sucursal2 = new byte[5];
         byte[] sucursal3 = new byte[5];
         byte[] sucursal4 = new byte[5];
-        int sumaTotalEmpresa = 0, sumaSucursal1 = 0,sumaSucursal2 = 0;
-        int sumaSucursal3 = 0, sumaSucursal4  = 0, cantSucursal2 = 0;
+        int sumaTotalEmpresa = 0, sumaSucursal1 = 0, sumaSucursal2 = 0;
+        int sumaSucursal3 = 0, sumaSucursal4 = 0, cantSucursal2 = 0;
         int cantArticulo1 = 0, cantArticulo2 = 0, cantArticulo3 = 0;
         int cantArticulo4 = 0, cantArticulo5 = 0;
         for(int i=0; i < nombresArticulos.length; i++){
@@ -58,6 +58,11 @@ public class Semana09 {
                     System.out.println("Error, debe ingresar cantidades mayores o iguales que 0.");
                 }
             }while(sucursal4[i]<0);
+            sumaSucursal1 = (int) (sumaSucursal1 + (sucursal1[i]*precioArticulos[i]));
+            sumaSucursal2 = (int) (sumaSucursal2 + (sucursal2[i]*precioArticulos[i]));
+            sumaSucursal3 = (int) (sumaSucursal3 + (sucursal3[i]*precioArticulos[i]));
+            sumaSucursal4 = (int) (sumaSucursal4 + (sucursal4[i]*precioArticulos[i]));
+            cantSucursal2 = cantSucursal2 + sucursal2[i];
         }
         
         cantArticulo1 = sucursal1[0] + sucursal2[0] + sucursal3[0] + sucursal4[0];
@@ -69,24 +74,9 @@ public class Semana09 {
         cantArticulo1+"\nArticulo 2 es "+cantArticulo2+"\nArticulo 3 es "+cantArticulo3
         +"\nArticulo 4 es " +cantArticulo4+"\nArticulo 5 es " +cantArticulo5);
         
-        for (byte s2:sucursal2){
-            cantSucursal2 = cantSucursal2 + s2;
-        }
         System.out.println("La cantidad de artículos en la sucursal 2 es "+cantSucursal2); 
-        System.out.println("La cantidad del articulo 3 en la sucursal 1 es "+sucursal1[2]);  
+        System.out.println("La cantidad del articulo 3 en la sucursal 1 es "+sucursal1[2]);
         
-        for(int i = 0; i<sucursal1.length; i++){
-            sumaSucursal1 = (int) (sumaSucursal1 + (sucursal1[i]*precioArticulos[i]));
-        }
-        for(int i = 0; i<sucursal2.length; i++){
-            sumaSucursal2 = (int) (sumaSucursal2 + (sucursal2[i]*precioArticulos[i]));
-        }
-        for(int i = 0; i<sucursal3.length; i++){
-            sumaSucursal3 = (int) (sumaSucursal3 + (sucursal3[i]*precioArticulos[i]));
-        }
-        for(int i = 0; i<sucursal4.length; i++){
-            sumaSucursal4 = (int) (sumaSucursal4 + (sucursal4[i]*precioArticulos[i]));
-        }
         System.out.println("La recaudación total de cada sucursal"
         +"\nSucural 1 es S/"+sumaSucursal1+" soles.\nSucural 2 es S/"+sumaSucursal2
         +" soles.\nSucural 3 es S/"+sumaSucursal3+" soles. \nSucural 4 es S/"+sumaSucursal4
